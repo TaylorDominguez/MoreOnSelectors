@@ -25,6 +25,14 @@ class formPage extends Page {
     {
         return $('#title1 > option:nth-child(3)')
     }
+    get firstname()
+    {
+        return $('//*[@id="fname1"]')
+    }
+    get lastname()
+    {
+        return $('//*[@id="lname1"]')
+    }
     /**
      * a method to encapsule automation code to interact with the page
      * e.g. to enter in a valid email
@@ -32,6 +40,14 @@ class formPage extends Page {
     async emailInput() {
         await this.emailInput.setValue(input);
         await this.submit.click();
+    }
+
+    async firstnameInput(nameInput){
+        await this.firstname.setValue(nameInput);
+    }
+
+    async lastnameInput(nameInput){
+        await this.lastname.setValue(nameInput);
     }
     /**
       * overwrite specific options to adapt it to page object

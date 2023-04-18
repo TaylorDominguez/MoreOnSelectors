@@ -22,4 +22,18 @@ describe('My Form application', () => {
             'Esq.'
         )
     })
+    it('should write a first name', async () => {
+        await formPage.firstnameInput('taylor')
+        await formPage.submit.click()
+        await expect(formPage.errortext).toHaveTextContaining(
+            'The form could not be submitted because 7 errors were found.'
+        )
+    })
+    it('should write a last name', async () => {
+        await formPage.lastnameInput('dominguez')
+        await formPage.submit.click()
+        await expect(formPage.errortext).toHaveTextContaining(
+            'The form could not be submitted because 6 errors were found.'
+        )
+    })
 });
