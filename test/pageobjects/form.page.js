@@ -15,7 +15,7 @@ class formPage extends Page {
     }
     get errortext()
     {
-        return $('#errors-validation-example > h2');
+        return $('//*[@id="errors-validation-example"]/h2');
     }
     get title()
     {
